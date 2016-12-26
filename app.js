@@ -8,11 +8,13 @@
     });
 
     var AppModule = ng.core.NgModule({
-        import: []
+        import: [ ng.platformBrowser.BrowserModule ],
+        declarations: [ AppComponent ]
     }).Class({
         constructor: function() { }
     });
+
+    ng.platformBrowserDynamic.platformBrowserDynamic()
+        .bootstrapModule(AppModule);
     
-}
-)
-();
+})();

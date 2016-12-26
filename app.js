@@ -19,7 +19,10 @@
     var MockQuoteService = Class ({
         constructor: function() {},
         getRandomQuote: function() {
-
+            return {
+                line: 'Mock Quote',
+                author: 'Mock Author'
+            };
         }
     });
 
@@ -45,7 +48,9 @@
     var AppModule = NgModule({
         imports: [  BrowserModule ],
         declarations: [ AppComponent, RandomQuoteComponent ],
-        providers: [ QuoteService ],
+        providers: [ 
+            { provide: QuoteService , useClass: MockQuoteService }
+            ],
         bootstrap: [ AppComponent ]        
     })
     .Class({

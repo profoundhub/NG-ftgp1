@@ -1,19 +1,23 @@
 (function() {
-
-    var AppComponent = ng.core.Component({
+    var Component = ng.core.Component;
+    var NgModule = ng.core.NgModule;
+    var BrowserModule = ng.platformBrowser.BrowserModule;
+    var platformBrowserDynamic = ng.platformBrowserDynamic.platformBrowserDynamic;
+    var AppComponent = Component({
         selector: 'my-app',
         template: '<h1>Hello World!</h1>'
     }).Class({
         constructor: function() { }
     });
 
-    var AppModule = ng.core.NgModule({
-        imports: [ng.platformBrowser.BrowserModule],
-        declarations: [AppComponent],
-        bootstrap: [AppComponent]
+    var AppModule = NgModule({
+        imports: [  BrowserModule ],
+        declarations: [ AppComponent ],
+        bootstrap: [ AppComponent ]
     }).Class({
         constructor: function() { }
     });
 
-    ng.platformBrowserDynamic.platformBrowserDynamic().bootstrapModule(AppModule);
+    platformBrowserDynamic().bootstrapModule(AppModule);
+
 })();

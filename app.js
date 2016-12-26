@@ -49,10 +49,7 @@
         imports: [  BrowserModule ],
         declarations: [ AppComponent, RandomQuoteComponent ],
         providers: [ 
-            { provide: QuoteService , useFactory: function() {
-                return new MockQuoteService();
-                }
-            }
+            QuoteService
         ],
         bootstrap: [ AppComponent ]        
     })

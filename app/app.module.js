@@ -6,7 +6,6 @@
     var RandomQuoteComponent = app.RandomQuoteComponent;
     var AppComponent = app.AppComponent;
 
-
     app.AppModule = NgModule({
         imports: [  BrowserModule ],
         declarations: [ AppComponent, RandomQuoteComponent ],
@@ -18,6 +17,5 @@
     .Class({
         constructor: function AppModule() { }
     });
-
 
 })(window.app || (window.app = {}));

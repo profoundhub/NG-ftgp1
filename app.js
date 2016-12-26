@@ -3,6 +3,7 @@
     var NgModule = ng.core.NgModule;
     var BrowserModule = ng.platformBrowser.BrowserModule;
     var platformBrowserDynamic = ng.platformBrowserDynamic.platformBrowserDynamic;
+    
     var AppComponent = Component({
         selector: 'my-app',
         template: '<h1>Hello World!</h1>'

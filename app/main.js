@@ -1,12 +1,15 @@
 (function(app) {
     
-    var Component = ng.core.Component;
+    
     var NgModule = ng.core.NgModule;
     var BrowserModule = ng.platformBrowser.BrowserModule;
     var platformBrowserDynamic = ng.platformBrowserDynamic.platformBrowserDynamic;
 
+    
     var QuoteService = app.QuoteService;
     var RandomQuoteComponent = app.RandomQuoteComponent;
+    var AppComponent = app.AppComponent;
+    
 
     var AppComponent = Component({
         selector: 'my-app',

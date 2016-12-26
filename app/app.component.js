@@ -1,8 +1,7 @@
-(function(app) {
-    
+(function(app) {    
     var Component = ng.core.Component;
 
-    var AppComponent = Component({
+    app.AppComponent = Component({
         selector: 'my-app',
         template: '<h1>Random Quotes!</h1>' + 
             '<random-quote></random-quote>'

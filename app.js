@@ -8,7 +8,6 @@
     
     var QuoteService = Class({
         constructor: function QuoteService() { 
-            this.id = quotesServiceId++;
             this.quotes = sampleQuotes;
         },
         getRandomQuote: function()  {            

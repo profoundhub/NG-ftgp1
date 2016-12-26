@@ -15,8 +15,9 @@
             return this.quotes[randomIndex];        
         },
         generateRandomQuotes: function generateRandomQuotes(delay, callback) {
+            var self = this;
             callback(this.getRandomQuote());
-            setInterval(function() {
+            setTimeout(function() {
                 callback(self.getRandomQuote());
             }, delay);
         }

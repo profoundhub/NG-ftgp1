@@ -38,7 +38,9 @@
     var AppModule = NgModule({
         imports: [  BrowserModule ],
         declarations: [ AppComponent, RandomQuoteComponent ],
-        providers: [ QuoteService ],
+        providers: [ 
+            QuoteService
+        ],
         bootstrap: [ AppComponent ]        
     })
     .Class({

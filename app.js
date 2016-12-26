@@ -10,9 +10,15 @@
         constructor: function QuoteService() { 
             this.quotes = sampleQuotes;
         },
-        getRandomQuote: function()  {            
+        getRandomQuote: function getRandomQuote()  {            
             var randomIndex = Math.floor(Math.random() * this.quotes.length);
             return this.quotes[randomIndex];        
+        },
+        generateRandomQuotes: function generateRandomQuotes(delay, callback) {
+            callback(this.getRandomQuote());
+            setInterval(function() {
+                callback(self.getRandomQuote());
+            }, delay);
         }
     });
 
@@ -22,7 +28,10 @@
     })
     .Class({
         constructor: [QuoteService, function RandomQuoteComponent(quoteService) { 
-            this.quote = quoteService.getRandomQuote();        
+            var self = this;
+            quoteService.generateRandomQuotes(2000, function(quote) {
+                self.quote = quote;
+            });
         }]
     });
 

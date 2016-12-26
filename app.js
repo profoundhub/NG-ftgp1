@@ -1,4 +1,5 @@
 (function() {
+
     var Class = ng.core.Class;
     var Component = ng.core.Component;
     var NgModule = ng.core.NgModule;
@@ -10,7 +11,7 @@
             this.quotes = sampleQuotes;
         },
         getRandomQuote: function()  {            
-            var randomIndex = Math.floor(Math.random() * quotes.length);
+            var randomIndex = Math.floor(Math.random() * this.quotes.length);
             return this.quotes[randomIndex];        }
     })
 
@@ -19,9 +20,9 @@
         template: '<p><em>{{ quote.line }}</em> &#8212; <strong>{{ quote.author }}</strong></p>'
     })
     .Class({
-        constructor: function RandomQuoteComponent(quoteService) { 
+        constructor: [QuoteService, function RandomQuoteComponent(quoteService) { 
             this.quote = quoteService.getRandomQuote();        
-        }
+        }]
     });
 
     var AppComponent = Component({
@@ -36,10 +37,11 @@
     var AppModule = NgModule({
         imports: [  BrowserModule ],
         declarations: [ AppComponent, RandomQuoteComponent ],
-        bootstrap: [ AppComponent ]
+        providers: [ QuoteService ],
+        bootstrap: [ AppComponent ]        
     })
     .Class({
-        constructor: function() { }
+        constructor: function AppModule() { }
     });
 
     platformBrowserDynamic().bootstrapModule(AppModule);

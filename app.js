@@ -16,7 +16,7 @@
 
     var AppComponent = Component({
         selector: 'my-app',
-        template: '<h1>Hello World!</h1>' + 
+        template: '<h1>Random Quotes!</h1>' + 
             '<random-quote></random-quote>'
     }).Class({
         constructor: function() { }
@@ -74,4 +74,5 @@
             "author": "Tom Cargill"
         }
     ]
+    
 })();

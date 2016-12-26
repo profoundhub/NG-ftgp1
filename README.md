@@ -1,0 +1,1 @@
+Random Quote via Angular & ES5

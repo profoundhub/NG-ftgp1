@@ -6,13 +6,18 @@
     var BrowserModule = ng.platformBrowser.BrowserModule;
     var platformBrowserDynamic = ng.platformBrowserDynamic.platformBrowserDynamic;
     
+    var quotesServiceId = 1;
+
     var QuoteService = Class({
         constructor: function QuoteService() { 
+            this.id = quotesServiceId++;
             this.quotes = sampleQuotes;
         },
         getRandomQuote: function()  {            
+            console.log('using QuoteService : ', this.id);
             var randomIndex = Math.floor(Math.random() * this.quotes.length);
-            return this.quotes[randomIndex];        }
+            return this.quotes[randomIndex];        
+        }
     })
 
     var RandomQuoteComponent = Component({
@@ -28,6 +33,7 @@
     var AppComponent = Component({
         selector: 'my-app',
         template: '<h1>Random Quotes!</h1>' + 
+            '<random-quote></random-quote>' + 
             '<random-quote></random-quote>'
     })
     .Class({

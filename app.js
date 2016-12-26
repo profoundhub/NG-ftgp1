@@ -14,7 +14,7 @@
             var randomIndex = Math.floor(Math.random() * this.quotes.length);
             return this.quotes[randomIndex];        
         },
-        generateRandomQuotes: function generateRandomQuotes() {
+        generateRandomQuotes: function generateRandomQuotes(delay, callback) {
             callback(this.getRandomQuote());
             setInterval(function() {
                 callback(self.getRandomQuote());
@@ -29,7 +29,7 @@
     .Class({
         constructor: [QuoteService, function RandomQuoteComponent(quoteService) { 
             var self = this;
-            quoteService.generateRandomQuote(2000, function(quote) {
+            quoteService.generateRandomQuotes(2000, function(quote) {
                 self.quote = quote;
             });
         }]

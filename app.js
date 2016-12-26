@@ -17,7 +17,7 @@
         generateRandomQuotes: function generateRandomQuotes() {
             callback(this.getRandomQuote());
             setInterval(function() {
-                callback(this.getRandomQuote());
+                callback(self.getRandomQuote());
             }, delay);
         }
     });
@@ -28,7 +28,10 @@
     })
     .Class({
         constructor: [QuoteService, function RandomQuoteComponent(quoteService) { 
-            this.quote = quoteService.getRandomQuote();        
+            var self = this;
+            quoteService.generateRandomQuote(2000, function(quote) {
+                self.quote = quote;
+            });
         }]
     });
 

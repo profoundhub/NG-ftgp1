@@ -49,8 +49,8 @@
         imports: [  BrowserModule ],
         declarations: [ AppComponent, RandomQuoteComponent ],
         providers: [ 
-            { provide: QuoteService , useClass: MockQuoteService }
-            ],
+            { provide: QuoteService , useValue: new MockQuoteService() }
+        ],
         bootstrap: [ AppComponent ]        
     })
     .Class({

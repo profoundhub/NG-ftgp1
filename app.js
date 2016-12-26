@@ -4,16 +4,26 @@
     var BrowserModule = ng.platformBrowser.BrowserModule;
     var platformBrowserDynamic = ng.platformBrowserDynamic.platformBrowserDynamic;
     
+    var RandomQuoteComponent = Component({
+        selector: 'random-quote',
+        template: '<p>{{ quote }}</p>'
+    }).Class({
+        constructor: function() { 
+            this.quote = "Quote as a property.";
+        }
+    });
+
     var AppComponent = Component({
         selector: 'my-app',
-        template: '<h1>Hello World!</h1>'
+        template: '<h1>Hello World!</h1>' + 
+            '<random-quote></random-quote>'
     }).Class({
         constructor: function() { }
     });
 
     var AppModule = NgModule({
         imports: [  BrowserModule ],
-        declarations: [ AppComponent ],
+        declarations: [ AppComponent, RandomQuoteComponent ],
         bootstrap: [ AppComponent ]
     }).Class({
         constructor: function() { }

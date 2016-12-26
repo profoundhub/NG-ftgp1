@@ -6,7 +6,7 @@
     var platformBrowserDynamic = ng.platformBrowserDynamic.platformBrowserDynamic;
     
     var QuoteService = Class({
-        constructor: function() { 
+        constructor: function QuoteService() { 
             this.quotes = sampleQuotes;
         },
         getRandomQuote: function()  {            
@@ -19,7 +19,7 @@
         template: '<p><em>{{ quote.line }}</em> &#8212; <strong>{{ quote.author }}</strong></p>'
     })
     .Class({
-        constructor: function(quoteService) { 
+        constructor: function RandomQuoteComponent(quoteService) { 
             this.quote = quoteService.getRandomQuote();        
         }
     });
@@ -30,7 +30,7 @@
             '<random-quote></random-quote>'
     })
     .Class({
-        constructor: function() { }
+        constructor: function AppComponent() { }
     });
 
     var AppModule = NgModule({

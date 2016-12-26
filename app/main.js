@@ -6,23 +6,6 @@
     var BrowserModule = ng.platformBrowser.BrowserModule;
     var platformBrowserDynamic = ng.platformBrowserDynamic.platformBrowserDynamic;
     
-    var QuoteService = Class({
-        constructor: function QuoteService() { 
-            this.quotes = sampleQuotes;
-        },
-        getRandomQuote: function getRandomQuote()  {            
-            var randomIndex = Math.floor(Math.random() * this.quotes.length);
-            return this.quotes[randomIndex];        
-        },
-        generateRandomQuotes: function generateRandomQuotes(delay, callback) {
-            var self = this;
-            callback(this.getRandomQuote());
-            setTimeout(function() {
-                callback(self.getRandomQuote());
-            }, delay);
-        }
-    });
-
     var RandomQuoteComponent = Component({
         selector: 'random-quote',
         template: '<p><em>{{ quote.line }}</em> &#8212; <strong>{{ quote.author }}</strong></p>'

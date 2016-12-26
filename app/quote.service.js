@@ -1,8 +1,8 @@
-(function() {
+(function(app) {
 
     var Class = ng.core.Class;
         
-    var QuoteService = Class({
+    app.QuoteService = Class({
         constructor: function QuoteService() { 
             this.quotes = sampleQuotes;
         },
@@ -62,4 +62,4 @@
         }
     ];
 
-})();
+})(window.app || (window.app = {}));

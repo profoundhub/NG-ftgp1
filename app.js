@@ -15,7 +15,7 @@
             var randomIndex = Math.floor(Math.random() * this.quotes.length);
             return this.quotes[randomIndex];        
         }
-    })
+    });
 
     var RandomQuoteComponent = Component({
         selector: 'random-quote',
@@ -89,6 +89,6 @@
             "line": "The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time.",
             "author": "Tom Cargill"
         }
-    ]
+    ];
 
 })();

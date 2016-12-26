@@ -1,17 +1,23 @@
 (function() {
+
     var Class = ng.core.Class;
     var Component = ng.core.Component;
     var NgModule = ng.core.NgModule;
     var BrowserModule = ng.platformBrowser.BrowserModule;
     var platformBrowserDynamic = ng.platformBrowserDynamic.platformBrowserDynamic;
     
+    var quotesServiceId = 1;
+
     var QuoteService = Class({
-        constructor: function() { 
+        constructor: function QuoteService() { 
+            this.id = quotesServiceId++;
             this.quotes = sampleQuotes;
         },
         getRandomQuote: function()  {            
-            var randomIndex = Math.floor(Math.random() * quotes.length);
-            return this.quotes[randomIndex];        }
+            console.log('using QuoteService : ', this.id);
+            var randomIndex = Math.floor(Math.random() * this.quotes.length);
+            return this.quotes[randomIndex];        
+        }
     })
 
     var RandomQuoteComponent = Component({
@@ -19,27 +25,29 @@
         template: '<p><em>{{ quote.line }}</em> &#8212; <strong>{{ quote.author }}</strong></p>'
     })
     .Class({
-        constructor: function(quoteService) { 
+        constructor: [QuoteService, function RandomQuoteComponent(quoteService) { 
             this.quote = quoteService.getRandomQuote();        
-        }
+        }]
     });
 
     var AppComponent = Component({
         selector: 'my-app',
         template: '<h1>Random Quotes!</h1>' + 
+            '<random-quote></random-quote>' + 
             '<random-quote></random-quote>'
     })
     .Class({
-        constructor: function() { }
+        constructor: function AppComponent() { }
     });
 
     var AppModule = NgModule({
         imports: [  BrowserModule ],
         declarations: [ AppComponent, RandomQuoteComponent ],
-        bootstrap: [ AppComponent ]
+        providers: [ QuoteService ],
+        bootstrap: [ AppComponent ]        
     })
     .Class({
-        constructor: function() { }
+        constructor: function AppModule() { }
     });
 
     platformBrowserDynamic().bootstrapModule(AppModule);

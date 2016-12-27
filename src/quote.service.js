@@ -1,21 +1,26 @@
 (function(app) {
-  var Class = ng.core.Class;
 
-  app.QuoteService = Class({
-    constructor: function QuoteService() {
+  class QuoteService {
+
+    constructor() {
       this.quotes = sampleQuotes;
-    },
-    getRandomQuote: function() {
-      var randomIndex = Math.floor(Math.random() * this.quotes.length);
-      return this.quotes[randomIndex];
-    },
-    generateRandomQuotes: function(delay, callback) {      
+    }
+
+    getRandomQuote() {
+      const randomIndex = Math.floor(Math.random() * this.quotes.length);
+      return this.quotes[ randomIndex ];
+    }
+ 
+    generateRandomQuotes(delay, callback) {      
       callback(this.getRandomQuote());
       setTimeout(() => callback(this.getRandomQuote()), delay);
     }
-  });
 
-  var sampleQuotes = [
+  }
+  
+  app.QuoteService = QuoteService;
+
+  const sampleQuotes = [
     {
       "line": "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
       "author": "Brian W. Kernighan"

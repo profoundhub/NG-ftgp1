@@ -1,8 +1,8 @@
-Import { NgModule } from '@angular/core';
-Import { BrowserModule } from '@angular/platform-browser';
-Import { QuoteService } from './quote.service';
-Import { RandomQuoteComponent } from './random-quote.component';
-Import { AppComponent } from './app.component';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { QuoteService } from './quote.service';
+import { RandomQuoteComponent } from './random-quote.component';
+import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [ BrowserModule ],

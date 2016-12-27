@@ -9,12 +9,9 @@
       var randomIndex = Math.floor(Math.random() * this.quotes.length);
       return this.quotes[randomIndex];
     },
-    generateRandomQuotes: function(delay, callback) {
-      var self = this;
+    generateRandomQuotes: function(delay, callback) {      
       callback(this.getRandomQuote());
-      setTimeout(function() {
-        callback(self.getRandomQuote());
-      }, delay);
+      setTimeout(() => callback(this.getRandomQuote()), delay);
     }
   });
 

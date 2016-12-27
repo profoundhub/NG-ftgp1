@@ -14,17 +14,6 @@
 
   class AppModule { }
   
-  
-  app.AppModule = NgModule({
-    imports: [BrowserModule],
-    declarations: [AppComponent, RandomQuoteComponent],
-    providers: [QuoteService],
-    bootstrap: [AppComponent]
-  })
-  .Class({
-    constructor: function() { }
-  });
-
   app.AppModule = AppModule;
 
 })(window.app || (window.app = {}));

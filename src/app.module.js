@@ -1,10 +1,10 @@
 
 
-  var NgModule = ng.core.NgModule;
-  var BrowserModule = ng.platformBrowser.BrowserModule;
-  var QuoteService = app.QuoteService;
-  var RandomQuoteComponent = app.RandomQuoteComponent;
-  var AppComponent = app.AppComponent;
+  Import { NgModule } from '@angular/core';
+  Import { BrowserModule } from '@angular/platform-browser';
+  Import { QuoteService } from './quote.service';
+  Import { RandomQuoteComponent } from './random-quote.component';
+  Import { AppComponent } from './app.component';
 
   @NgModule({
     imports: [ BrowserModule ],

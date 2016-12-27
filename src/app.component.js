@@ -1,6 +1,4 @@
-(function(app) {
-
-  var Component = ng.core.Component;
+import { Component, Inject } from '@angular/core';
 
   @Component({
     selector: 'my-app',
@@ -10,8 +8,4 @@
     `      
   })
 
-  class AppComponent { } 
-
-  app.AppComponent = AppComponent;
-
-})(window.app || (window.app = {}));
+  export class AppComponent { } 

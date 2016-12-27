@@ -1,5 +1,5 @@
-(function(app) {
-  
+
+
   var NgModule = ng.core.NgModule;
   var BrowserModule = ng.platformBrowser.BrowserModule;
   var QuoteService = app.QuoteService;
@@ -13,8 +13,4 @@
     bootstrap: [ AppComponent ]
   })
 
-  class AppModule { }
-  
-  app.AppModule = AppModule;
-
-})(window.app || (window.app = {}));
+  export class AppModule { }

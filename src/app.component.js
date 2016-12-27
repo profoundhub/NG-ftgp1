@@ -2,16 +2,16 @@
 
   var Component = ng.core.Component;
 
-  class AppComponent { } 
-
-  app.AppComponent = Component({
+  @Component({
     selector: 'my-app',
     template: `
       <h1>Random Quotes</h1>
       <random-quote></random-quote>
     `      
-  })(AppComponent);
+  })
 
+  class AppComponent { } 
 
+  app.AppComponent =AppComponent
 
 })(window.app || (window.app = {}));

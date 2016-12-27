@@ -3,9 +3,10 @@
 
   app.AppComponent = Component({
     selector: 'my-app',
-    template:
-      '<h1>Random Quote</h1>' +
-      '<random-quote></random-quote>'
+    template: `
+      <h1>Random Quotes</h1>
+      <random-quote></random-quote>
+    `      
   })
   .Class({
     constructor: function AppComponent() { }

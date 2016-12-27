@@ -11,7 +11,7 @@
     constructor: [QuoteService, function RandomQuoteComponent(quoteService) {
       var self = this;
       quoteService.generateRandomQuotes(2000, function (quote) {
-        self.quote = quote;
+        return self.quote = quote;
       });
     }]
   });

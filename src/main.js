@@ -1,7 +1,5 @@
-(function(app) {
-  var platformBrowserDynamic = ng.platformBrowserDynamic.platformBrowserDynamic;
-  var AppModule = app.AppModule;
 
-  platformBrowserDynamic().bootstrapModule(AppModule);
+import { platformBrowserDynamic } from '@angular/core';
+import { AppModule } from './app.module';
 
-})(window.app || (window.app = {}));
+platformBrowserDynamic().bootstrapModule(AppModule);

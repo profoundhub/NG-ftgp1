@@ -2,11 +2,24 @@
   var Component = ng.core.Component;
   var QuoteService = app.QuoteService;
 
-  class RandomQuoteComponent {
+  
+  
+  @Component({
+    selector: 'random-quote',
+    template: '<p><em>{{quote.line}}</em> - {{quote.author}}</p>'
+  })
 
+  class RandomQuoteComponent {
+      constructor: (QuoteService) {
+        quoteService.generateRandomQuotes(2000, quote => this.quote = quote);      
+      } 
   }
 
+  // ===
+
   
+
+
   app.RandomQuoteComponent = Component({
     selector: 'random-quote',
     template: '<p><em>{{quote.line}}</em> - {{quote.author}}</p>'

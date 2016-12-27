@@ -1,5 +1,8 @@
 (function(app) {
+
   var Component = ng.core.Component;
+
+  class AppComponent { } 
 
   app.AppComponent = Component({
     selector: 'my-app',
@@ -7,9 +10,8 @@
       <h1>Random Quotes</h1>
       <random-quote></random-quote>
     `      
-  })
-  .Class({
-    constructor: function AppComponent() { }
-  });
+  })(AppComponent);
+
+
 
 })(window.app || (window.app = {}));

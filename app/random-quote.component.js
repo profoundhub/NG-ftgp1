@@ -9,9 +9,10 @@
     template: '<p><em>{{quote.line}}</em> - {{quote.author}}</p>'
   }).Class({
     constructor: [QuoteService, function RandomQuoteComponent(quoteService) {
-      var self = this;
+      var _this = this;
+
       quoteService.generateRandomQuotes(2000, function (quote) {
-        self.quote = quote;
+        return _this.quote = quote;
       });
     }]
   });

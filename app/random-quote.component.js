@@ -1,8 +1,14 @@
 'use strict';
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 (function (app) {
   var Component = ng.core.Component;
   var QuoteService = app.QuoteService;
+
+  var RandomQuoteComponent = function RandomQuoteComponent() {
+    _classCallCheck(this, RandomQuoteComponent);
+  };
 
   app.RandomQuoteComponent = Component({
     selector: 'random-quote',
@@ -16,4 +22,6 @@
       });
     }]
   });
+
+  app.RandomQuoteComponent = RandomQuoteComponent;
 })(window.app || (window.app = {}));

@@ -1,6 +1,12 @@
 (function(app) {
   let Class = ng.core.Class;
 
+  
+  
+  
+  
+  
+  
   app.QuoteService = Class({
     constructor: function QuoteService() {
       this.quotes = sampleQuotes;

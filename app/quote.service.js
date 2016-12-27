@@ -20,28 +20,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var randomIndex = Math.floor(Math.random() * this.quotes.length);
         return this.quotes[randomIndex];
       }
+    }, {
+      key: "generateRandomQuotes",
+      value: function generateRandomQuotes(delay, callback) {
+        var _this = this;
+
+        callback(this.getRandomQuote());
+        setTimeout(function () {
+          return callback(_this.getRandomQuote());
+        }, delay);
+      }
     }]);
 
     return QuoteService;
   }();
 
-  app.QuoteService = Class({
-    constructor: function QuoteService() {
-      this.quotes = sampleQuotes;
-    },
-    getRandomQuote: function getRandomQuote() {
-      var randomIndex = Math.floor(Math.random() * this.quotes.length);
-      return this.quotes[randomIndex];
-    },
-    generateRandomQuotes: function generateRandomQuotes(delay, callback) {
-      var _this = this;
-
-      callback(this.getRandomQuote());
-      setTimeout(function () {
-        return callback(_this.getRandomQuote());
-      }, delay);
-    }
-  });
+  app.QuoteService = QuoteService;
 
   var sampleQuotes = [{
     "line": "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",

@@ -11,27 +11,15 @@
       const randomIndex = Math.floor(Math.random() * this.quotes.length);
       return this.quotes[randomIndex];
     }
-
-
-  }
-  
-  
-  
-  
-  
-  app.QuoteService = Class({
-    constructor: function QuoteService() {
-      this.quotes = sampleQuotes;
-    },
-    getRandomQuote: function() {
-      let randomIndex = Math.floor(Math.random() * this.quotes.length);
-      return this.quotes[randomIndex];
-    },
-    generateRandomQuotes: function(delay, callback) {      
+ 
+    generateRandomQuotes(delay, callback) {      
       callback(this.getRandomQuote());
       setTimeout(() => callback(this.getRandomQuote()), delay);
     }
-  });
+
+  }
+  
+  app.QuoteService = QuoteService;
 
   const sampleQuotes = [
     {

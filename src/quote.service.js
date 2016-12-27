@@ -1,5 +1,4 @@
 (function(app) {
-  let Class = ng.core.Class;
 
   class QuoteService {
 
@@ -9,7 +8,7 @@
 
     getRandomQuote() {
       const randomIndex = Math.floor(Math.random() * this.quotes.length);
-      return this.quotes[randomIndex];
+      return this.quotes[ randomIndex ];
     }
  
     generateRandomQuotes(delay, callback) {      

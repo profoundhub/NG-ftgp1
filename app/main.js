@@ -1,7 +1,8 @@
-(function(app) {
-    var platformBrowserDynamic = ng.platformBrowserDynamic.platformBrowserDynamic;
-    var AppModule = app.AppModule;
-    
-    platformBrowserDynamic().bootstrapModule(AppModule);
+"use strict";
 
+(function (app) {
+  var platformBrowserDynamic = ng.platformBrowserDynamic.platformBrowserDynamic;
+  var AppModule = app.AppModule;
+
+  platformBrowserDynamic().bootstrapModule(AppModule);
 })(window.app || (window.app = {}));

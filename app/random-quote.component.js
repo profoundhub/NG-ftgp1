@@ -6,7 +6,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   var _dec, _class;
 
   var Component = ng.core.Component;
-  var Inject = mg.core.Inject;
+  var Inject = ng.core.Inject;
   var QuoteService = app.QuoteService;
 
   var RandomQuoteComponent = (_dec = Component({

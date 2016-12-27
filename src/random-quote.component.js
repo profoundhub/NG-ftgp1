@@ -1,7 +1,7 @@
 (function(app) {
   
   let Component = ng.core.Component;
-  let Inject = mg.core.Inject;
+  let Inject = ng.core.Inject;
   let QuoteService = app.QuoteService;
 
   @Component({

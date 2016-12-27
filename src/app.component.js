@@ -12,6 +12,6 @@
 
   class AppComponent { } 
 
-  app.AppComponent =AppComponent
+  app.AppComponent = AppComponent;
 
 })(window.app || (window.app = {}));
